@@ -9,9 +9,12 @@ import { Card, CardContent } from '@/components/ui/card'
 import slugify from 'slugify'
 import { showToast } from '@/helpers/showToast'
 import { getEnv } from '@/helpers/getEnv'
+import { useNavigate } from 'react-router'
+import { RouteCategoryDetails } from '@/helpers/RouteName'
 
 
 const AddCategory = () => {
+    const navigate = useNavigate()
 
     const formSchema = z.object({
         name: z.string().min(3, "Name must be at least 3 Characters"),
@@ -52,7 +55,7 @@ const AddCategory = () => {
             }
             form.reset()
             showToast("success", data.message)
-
+            navigate(RouteCategoryDetails)
         } catch (error) {
             showToast("error", error.message)
         }
@@ -73,7 +76,7 @@ const AddCategory = () => {
                                         <FormItem>
                                             <FormLabel>Name</FormLabel>
                                             <FormControl>
-                                                <Input placeholder="Enter Your Name" {...field} />
+                                                <Input placeholder="Add Category Name" {...field} />
                                             </FormControl>
                                             <FormMessage />
                                         </FormItem>

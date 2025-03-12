@@ -66,7 +66,7 @@ const User = () => {
                                         <TableCell>{user.name}</TableCell>
                                         <TableCell>{user.email}</TableCell>
                                         <TableCell>
-                                            <img className='w-10' src={user.avatar || usericon} alt="" />
+                                            <img className='w-10 rounded-full' src={user.avatar || usericon} alt="" />
                                         </TableCell>
                                         <TableCell>{moment(user.createdAt).format("DD-MM-YYYY")}</TableCell>
 

@@ -54,19 +54,9 @@ const AppSidebar = () => {
                         {user && user.isLoggedIn
                             ?
                             <>
-                                <SidebarMenuItem>
-                                    <SidebarMenuButton>
-                                        <GrBlog />
-                                        <Link to={RouteBlog}>Blogs</Link>
-                                    </SidebarMenuButton>
-                                </SidebarMenuItem>
 
-                                <SidebarMenuItem>
-                                    <SidebarMenuButton>
-                                        <FaRegCommentDots />
-                                        <Link to={RouteCommentDetails}>Comments</Link>
-                                    </SidebarMenuButton>
-                                </SidebarMenuItem>
+
+
                             </>
                             :
                             <></>
@@ -76,6 +66,20 @@ const AppSidebar = () => {
                         {user && user.isLoggedIn && user.user.role === "admin"
                             ?
                             <>
+                                <SidebarMenuItem>
+                                    <SidebarMenuButton>
+                                        <FaRegCommentDots />
+                                        <Link to={RouteCommentDetails}>Comments</Link>
+                                    </SidebarMenuButton>
+                                </SidebarMenuItem>
+
+                                <SidebarMenuItem>
+                                    <SidebarMenuButton>
+                                        <GrBlog />
+                                        <Link to={RouteBlog}>Blogs</Link>
+                                    </SidebarMenuButton>
+                                </SidebarMenuItem>
+
                                 <SidebarMenuItem>
                                     <SidebarMenuButton>
                                         <BiCategoryAlt />

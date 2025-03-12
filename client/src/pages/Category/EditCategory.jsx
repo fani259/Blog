@@ -9,14 +9,15 @@ import { Card, CardContent } from '@/components/ui/card'
 import slugify from 'slugify'
 import { showToast } from '@/helpers/showToast'
 import { getEnv } from '@/helpers/getEnv'
-import { useParams } from 'react-router'
+import { useNavigate, useParams } from 'react-router'
 import { useFetch } from '@/hooks/UseFetch'
+import { RouteCategoryDetails } from '@/helpers/RouteName'
 
 
 const EditCategory = () => {
 
     const { category_id } = useParams()
-
+    const navigate = useNavigate()
     const { data: categoryData, loading, error } = useFetch(`${getEnv("VITE_API_BASE_URL")}/category/show/${category_id}`, {
         method: "get",
         credentials: "include"
@@ -68,7 +69,7 @@ const EditCategory = () => {
                 return showToast("error", data.message)
             }
             showToast("success", data.message)
-
+            navigate(RouteCategoryDetails)
         } catch (error) {
             showToast("error", error.message)
         }

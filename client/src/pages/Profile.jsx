@@ -15,6 +15,7 @@ import { useFetch } from '@/hooks/UseFetch'
 import { IoCameraOutline } from "react-icons/io5";
 import Dropzone from 'react-dropzone'
 import { setUser } from '@/redux/user/user.slice'
+import usericon from "@/assets/user.png"
 // import Loading from '@/components/Loading'
 
 
@@ -88,6 +89,7 @@ const Profile = () => {
 
 
     const handleFileSelection = (files) => {
+        console.log("Selected Files:", files);
         const file = files[0]
         const preview = URL.createObjectURL(file)
         setFile(file)
@@ -100,16 +102,14 @@ const Profile = () => {
             <CardContent>
                 <div className='flex justify-center items-center mt-10'>
 
-
                     <Dropzone onDrop={acceptedFiles => handleFileSelection(acceptedFiles)}>
                         {({ getRootProps, getInputProps }) => (
-
                             <div {...getRootProps()}>
                                 <input {...getInputProps()} />
-                                <Avatar className="w-32 h-32 relative group ">
-                                    <AvatarImage className="rounded-full w-32 h-32" src={filePreview ? filePreview : userData?.user?.avatar} />
-                                    <div className=" absolute z-50 w-full h-full top-0 left-0 items-center justify-center bg-black/20 border-2 border-violet-500 rounded-full group-hover:flex hidden cursor-pointer">
-                                        <IoCameraOutline color="#7c3aed" />
+                                <Avatar className="w-28 h-28 relative group">
+                                    <AvatarImage src={filePreview ? filePreview : userData?.user?.avatar || usericon} className='rounded-full w-36 h-36' />
+                                    <div className='absolute z-50 w-full h-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 justify-center items-center bg-black bg-opacity-20 border-2 border-violet-500 rounded-full group-hover:flex hidden cursor-pointer'>
+                                        <IoCameraOutline color='#7c3aed' />
                                     </div>
                                 </Avatar>
                             </div>
@@ -125,6 +125,8 @@ const Profile = () => {
                 <div>
                     <Form {...form}>
                         <form onSubmit={form.handleSubmit(onSubmit)} >
+
+
 
                             <div className='mb-3'>
                                 <FormField

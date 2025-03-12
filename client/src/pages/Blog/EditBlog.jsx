@@ -48,7 +48,7 @@ const EditBlog = () => {
 
 
     const formSchema = z.object({
-        category: z.string().min(3, "Category must be at least 3 Characters"),
+        category: z.string().min(3, "select the category"),
         title: z.string().min(3, "Title must be at least 3 Characters"),
         slug: z.string().min(3, "Slug must be at least 3 Characters"),
         blogContent: z.string().min(3, "Blog Content must be at least 3 Characters"),
@@ -238,7 +238,7 @@ const EditBlog = () => {
                                 />
 
                             </div>
-                            <Button type="submit" className="w-full bg-purple-600 hover:bg-purple-700">Submit</Button>
+                            <Button type="submit" className="w-full bg-purple-600 hover:bg-purple-700">Save Changes</Button>
 
                         </form>
                     </Form>

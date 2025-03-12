@@ -38,7 +38,6 @@ const App = () => {
 
           <Route element={<AuthRouteProtection />} >
             <Route path={RouteProfile} element={<Profile />} />
-            <Route path={RouteBlogAdd} element={<AddBlog />} />
             <Route path={RouteBlog} element={<BlogDetails />} />
             <Route path={RouteBlogEdit()} element={<EditBlog />} />
             <Route path={RouteCommentDetails} element={<Comments />} />
@@ -46,6 +45,7 @@ const App = () => {
 
           <Route element={<OnlyAdminAllowed />} >
             {/* Blog Category  */}
+            <Route path={RouteBlogAdd} element={<AddBlog />} />
             <Route path={RouteAddCategory} element={<AddCategory />} />
             <Route path={RouteCategoryDetails} element={<CategoryDetails />} />
             <Route path={RouteEditCategory()} element={<EditCategory />} />

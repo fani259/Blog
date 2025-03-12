@@ -39,7 +39,7 @@ const AddBlog = () => {
 
 
     const formSchema = z.object({
-        category: z.string().min(3, "Category must be at least 3 Characters"),
+        category: z.string().min(3, "Choose the Category"),
         title: z.string().min(3, "Title must be at least 3 Characters"),
         slug: z.string().min(3, "Slug must be at least 3 Characters"),
         blogContent: z.string().min(3, "Blog Content must be at least 3 Characters"),

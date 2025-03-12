@@ -4,15 +4,6 @@ import { useNavigate } from 'react-router'
 import { RouteSearch } from '@/helpers/RouteName'
 
 const SearchBox = () => {
-    // const navigate = useNavigate()
-    // const [query, setQuery] = useState()
-    // const getInput = (e) => {
-    //     setQuery(e.target.value)
-    // }
-    // const handleSubmit = (e) => {
-    //     e.preventDefault()
-    //     navigate(RouteSearch(query))
-    // }
     const navigate = useNavigate()
     const [query, setQuery] = useState()
     const getInput = (e) => {

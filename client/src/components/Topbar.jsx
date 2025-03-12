@@ -35,7 +35,6 @@ const Topbar = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const user = useSelector((state) => state.user)
-
     const handleLogout = async () => {
         try {
             const response = await fetch(`${getEnv("VITE_API_BASE_URL")}/auth/logout`, {
@@ -114,12 +113,20 @@ const Topbar = () => {
                                 </Link>
                             </DropdownMenuItem>
 
-                            <DropdownMenuItem asChild className="cursor-pointer">
-                                <Link to={RouteBlogAdd}>
-                                    <FaPlus />
-                                    Create Blog
-                                </Link>
-                            </DropdownMenuItem>
+
+                            {user && user.isLoggedIn && user.user.role === "admin"
+                                ?
+
+                                < DropdownMenuItem DropdownMenuItem asChild className="cursor-pointer">
+                                    <Link to={RouteBlogAdd}>
+                                        <FaPlus />
+                                        Create Blog
+                                    </Link>
+                                </DropdownMenuItem>
+                                :
+                                <></>
+
+                            }
 
                             <DropdownMenuSeparator />
                             <DropdownMenuItem onClick={handleLogout} className="cursor-pointer">
@@ -139,7 +146,7 @@ const Topbar = () => {
 
             </div>
 
-        </div>
+        </div >
     )
 }
 

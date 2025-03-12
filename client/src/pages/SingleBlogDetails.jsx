@@ -32,7 +32,7 @@ const SingleBlogDetails = () => {
                         <div className='flex justify-between items-center'>
                             <div className='flex justify-between items-center gap-5'>
                                 <Avatar>
-                                    <AvatarImage className='w-10 h-10' src={data.blog.author.avatar || usericon} />
+                                    <AvatarImage className='w-10 h-10 rounded-full' src={data.blog.author.avatar || usericon} />
                                 </Avatar>
 
                                 <div>

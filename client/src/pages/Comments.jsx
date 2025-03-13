@@ -40,6 +40,9 @@ const Comments = () => {
     return (
         <div>
             <Card>
+                <div className='flex '>
+                    <h1 className=' ml-10 font-bold text-xl'>All Comments</h1>
+                </div>
 
                 <CardContent>
                     <Table>

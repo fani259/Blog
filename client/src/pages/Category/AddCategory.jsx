@@ -64,6 +64,7 @@ const AddCategory = () => {
     return (
         <div>
             <Card className="pt-5 max-w-screen-md mx-auto " >
+                <h1 className='text-xl font-bold ml-9'>Add New Category</h1>
                 <CardContent>
                     <Form {...form}>
                         <form onSubmit={form.handleSubmit(onSubmit)} >

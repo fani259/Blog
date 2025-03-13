@@ -48,7 +48,7 @@ const User = () => {
                     <Table>
                         <TableHeader>
                             <TableRow>
-                                <TableHead>Blog</TableHead>
+                                <TableHead>Role</TableHead>
                                 <TableHead>Name</TableHead>
                                 <TableHead>Email</TableHead>
                                 <TableHead>Avatar</TableHead>

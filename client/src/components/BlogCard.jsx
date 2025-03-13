@@ -76,7 +76,7 @@ const BlogCard = ({ props }) => {
                         />
                     </div>
 
-                    {/* Title & Date Section */}
+                    Title & Date Section
                     <div className="flex flex-col flex-grow justify-end">
                         <p className='flex items-center gap-2 mb-2'>
                             <FaRegCalendarAlt />
